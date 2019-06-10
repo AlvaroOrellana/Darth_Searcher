@@ -1,0 +1,24 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+<form type="get" action="." style="margin: 0">
+    <input  id="search_box" type="text" name="search_box"  placeholder="Search..." >
+    <button id="search_submit" type="submit" >Buscar</button>
+</form>
+<div class="carousel-inner">
+<!-- {% for review in reviews|slice:":3" %}
+    {% if forloop.first %} -->
+        <!-- <div class="active item"> -->
+ <!--    {% else %} -->
+        <div class="item">
+        <img src="{% static 'slide1.jpg' %}" />
+<!--     {% endif %} -->
+<!--         <blockquote>
+            <p>{{ review.description }}</p>
+        </blockquote>
+        <label>{{ review.business }}</label> -->
+    	</div>
+<!-- {% endfor %} -->
+</div>
+{%csrf_token%}
+{% endblock %}
