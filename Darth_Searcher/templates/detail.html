@@ -22,11 +22,8 @@
 				  <div class="carousel-inner" align="center">
 				  	{% for f in films %}
 				  		<div class="carousel-item {% if forloop.first %} active {% endif %}">
-				  			<li style="list-style-type: none;">
-					  			<br>
-					  			<img src="/static/{{f.episode_id}}.jpeg" width="50%" height="75%"/>
+					  			<img class="movie_pic" src="/static/{{f.episode_id}}.jpeg"/>
 				  				<h3>{{ f.title }}</h3>
-				  			</li>
 				  		</div>
 				  	{% endfor %}
 				  <a class="carousel-control-prev" href="#carousel" data-slide="prev">

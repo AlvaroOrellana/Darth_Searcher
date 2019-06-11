@@ -17,6 +17,7 @@
 
 	<body>
 		<div class="content">
+			<img src="{% static 'logo.png' %}"/>
 			<form class="form" method="POST" action="detail/">
 			{% csrf_token %}
 			    <input class="search_box" type="text" name="film_search" placeholder="The Empire Strikes Back..." >
@@ -28,7 +29,6 @@
 			  	{% for i in pjs %}
 			  		<div class="carousel-item {% if forloop.first %} active {% endif %}">
 			  			<li style="list-style-type: none;">
-				  			<br>
 			  				<h2>{{ i.name }}</h3>
 			  				<h3>Gender: {{ i.gender }}
 			  				<h3>Born in: {{ i.birth_year }}.</h2>

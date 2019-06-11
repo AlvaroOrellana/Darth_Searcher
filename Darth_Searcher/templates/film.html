@@ -16,29 +16,7 @@
 	</head>
 
 	<body>
-		<div class="detail">
-			<h3>The following films contains "{{film_search}}" in its name:</h3>
-			<div id="carousel" class="carousel slide" data-ride="carousel">
-				  <div class="carousel-inner" align="center">
-				  	{% for f in films %}
-				  		<div class="carousel-item {% if forloop.first %} active {% endif %}">
-				  			<li style="list-style-type: none;">
-					  			<br>
-					  			<img src="/static/{{f.episode_id}}.jpeg" width="50%" height="75%"/>
-				  				<h3>{{ f.title }}</h3>
-				  			</li>
-				  		</div>
-				  	{% endfor %}
-				  <a class="carousel-control-prev" href="#carousel" data-slide="prev">
-				    <span class="carousel-control-prev-icon"></span>
-				  </a>
-				  <a class="carousel-control-next" href="#carousel" data-slide="next">
-				    <span class="carousel-control-next-icon"></span>
-				  </a>
-				  </div>
-			</div>
-			<input type=button value="Back to Index" onClick="location.href='{% url 'Index' %}'">
-		</div>
+		
 		{%csrf_token%}
 		{% endblock %}
 	</body>

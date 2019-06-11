@@ -22,3 +22,11 @@ def film_compare(request):
 			if film_search.upper() in film.title.upper():
 				result.append(film)
 		return render(request, "detail.html", {'film_search': film_search, 'films': result})
+
+def film_detail(request):
+	film_search = request.POST.get('film_id',False)
+	if not film_search:
+		return render(request, "error.html")
+	else:
+		
+		return render(request, "film.html", {'pjs': pjs})
