@@ -1,76 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-{% load bootstrap4 %}
-{% load static %}
-{% block content %}
-<title>Darth Searcher</title>
-<link rel="icon" href="{% static 'favicon.ico' %}" sizes="64x64" />
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style type="text/css">
-	body
-	 	{
-			background-image: url({% static 'background.jpg' %});
-			background-repeat: no-repeat;
-			background-size: cover;
-	 	}
-	.form {
-		display: flex;
-		flex-direction: column;
-	}
-	.contenido {
-		display: flex;
-		flex-direction: column;
-		width: 50%;
-		height: 100vh; 
-		align-items: center;
-		justify-content: space-around;
-	}
-	@media (max-width: 960px){
-		.contenido {
-			width: 100%;
-		}
-	}
-	</style>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<style>
-	.carousel-inner img {
-		width: 25%;
-	}
-	</style>
-</head>
+	<head>
+	{% load bootstrap4 %}
+	{% load static %}
+	{% block content %}
+	<title>Darth Searcher</title>
+	<link rel="icon" href="{% static 'favicon.ico' %}" sizes="64x64" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+	</head>
 
-<body>
-<div class="contenido">
-	<form class="form" type="get" action="." style="margin: 0">
-	    <input  id="search_box" type="text" name="search_box"  placeholder="Search..." >
-	    <button id="search_submit" type="submit" >Buscar</button>
-	</form>
-	<div id="demo" class="carousel slide" data-ride="carousel" style=" height:50%; width:50%; ">
-	  <div class="carousel-inner" align="center">
-	  	{% for i in pjs %}
-	  		<div class="carousel-item {% if forloop.first %} active {% endif %}">
-	  			<li style="list-style-type: none;">
-		  			<br>
-	  				<h3 style="color: white">Nombre: {{ i.name }}</h3>
-	  				<h2></h2>
-	  			</li>
-	  		</div>
-	  	{% endfor %}
-	  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-	    <span class="carousel-control-prev-icon"></span>
-	  </a>
-	  <a class="carousel-control-next" href="#demo" data-slide="next">
-	    <span class="carousel-control-next-icon"></span>
-	  </a>
-	  </div>
-	</div>
-</div>
-{%csrf_token%}
-{% endblock %}
-</body>
+	<body>
+		<div class="content">
+			<form class="form" method="POST" action="detail/">
+			{% csrf_token %}
+			    <input class="search_box" type="text" name="film_search" placeholder="The Empire Strikes Back..." >
+			    <button class="btn" type="submit" ><img src="{% static 'search.png' %}"/></button>
+			</form>
+			<div id="carousel" class="carousel slide" data-ride="carousel" style=" height:50%; width:50%; ">
+			  <div class="carousel-inner" align="center">
+			  	{% for i in pjs %}
+			  		<div class="carousel-item {% if forloop.first %} active {% endif %}">
+			  			<li style="list-style-type: none;">
+				  			<br>
+			  				<h3>{{ i.name }}</h3>
+			  				<h2></h2>
+			  			</li>
+			  		</div>
+			  	{% endfor %}
+			  <a class="carousel-control-prev" href="#carousel" data-slide="prev">
+			    <span class="carousel-control-prev-icon"></span>
+			  </a>
+			  <a class="carousel-control-next" href="#carousel" data-slide="next">
+			    <span class="carousel-control-next-icon"></span>
+			  </a>
+			  </div>
+			</div>
+		</div>
+		{% endblock %}
+	</body>
 </html>

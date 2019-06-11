@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	{% load bootstrap4 %}
+	{% load static %}
+	{% block content %}
+	<title>Darth Searcher</title>
+	<link rel="icon" href="{% static 'favicon.ico' %}" sizes="64x64" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+	</head>
+
+	<body>
+		<div class="detail">
+			<h3>The following films contains "{{film_search}}" in its name:</h3>
+			<div id="carousel" class="carousel slide" data-ride="carousel">
+				  <div class="carousel-inner" align="center">
+				  	{% for f in films %}
+				  		<div class="carousel-item {% if forloop.first %} active {% endif %}">
+				  			<li style="list-style-type: none;">
+					  			<br>
+					  			<img src="/static/{{f.episode_id}}.jpg" width="50%" height="75%"/>
+				  				<h3>{{ f.title }}</h3>
+				  			</li>
+				  		</div>
+				  	{% endfor %}
+				  <a class="carousel-control-prev" href="#carousel" data-slide="prev">
+				    <span class="carousel-control-prev-icon"></span>
+				  </a>
+				  <a class="carousel-control-next" href="#carousel" data-slide="next">
+				    <span class="carousel-control-next-icon"></span>
+				  </a>
+				  </div>
+				 <h2> The films are ordered based on its release date.</h2>
+			</div>
+			<input type=button value="Back to Index" onClick="location.href='{% url 'Index' %}'">
+		</div>
+		{%csrf_token%}
+		{% endblock %}
+	</body>
+</html>
