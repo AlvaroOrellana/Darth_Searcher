@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'index/$', views.index, name="Index"),
     url(r'detail/$', views.film_compare, name="FilmCompare"),
+    url(r'^film/(?P<ide>\d+)/$', views.film_detail, name="Film"),
     url(r'^$',RedirectView.as_view(url='/index')),
 ]

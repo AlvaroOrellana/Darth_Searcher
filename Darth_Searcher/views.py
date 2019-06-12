@@ -15,7 +15,7 @@ def index(request):
 def film_compare(request):
 	film_search = request.POST.get('film_search',False)
 	if not film_search:
-		return render(request, "error.html")
+		return render(request, "404.html")
 	else:
 		films, result = swapi.get_all("films").order_by("release_date"), []
 		for film in films:
@@ -23,10 +23,8 @@ def film_compare(request):
 				result.append(film)
 		return render(request, "detail.html", {'film_search': film_search, 'films': result})
 
-def film_detail(request):
-	film_search = request.POST.get('film_id',False)
-	if not film_search:
-		return render(request, "error.html")
-	else:
-		
-		return render(request, "film.html", {'pjs': pjs})
+def film_detail(request, ide):
+	films = swapi.get_all("films")
+	for film in films.items:
+		if int(ide) == film.episode_id:
+			return render(request, "film.html", {'f': film})

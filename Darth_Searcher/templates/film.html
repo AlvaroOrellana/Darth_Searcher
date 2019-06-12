@@ -16,7 +16,15 @@
 	</head>
 
 	<body>
-		
+		<div class="content">
+			<img src="/static/{{f.episode_id}}.jpeg"/>
+			<h1>Title: {{ f.title }}</h1>
+			<h2>Director: {{ f.director }}</h2>
+			<h3>Producer/s: {{ f.producer }}</h3>
+			<h3>Release Date: {{ f.release_date }}</h3>
+			<input id="button" type=button value="Back to Previous Page" onClick="history.back()">
+			<input id="button" type=button value="Back to Index" onClick="location.href='{% url 'Index' %}'">
+		</div>
 		{%csrf_token%}
 		{% endblock %}
 	</body>

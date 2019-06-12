@@ -22,16 +22,18 @@
 				  <div class="carousel-inner" align="center">
 				  	{% for f in films %}
 				  		<div class="carousel-item {% if forloop.first %} active {% endif %}">
-					  			<img class="movie_pic" src="/static/{{f.episode_id}}.jpeg"/>
-				  				<h3>{{ f.title }}</h3>
+					  		<a href="{% url 'Film' ide=f.episode_id%}"><img class="movie_pic" src="/static/{{f.episode_id}}.jpeg"/></a>
+					  		<h3>{{ f.title }}</h3>
 				  		</div>
 				  	{% endfor %}
-				  <a class="carousel-control-prev" href="#carousel" data-slide="prev">
-				    <span class="carousel-control-prev-icon"></span>
-				  </a>
-				  <a class="carousel-control-next" href="#carousel" data-slide="next">
-				    <span class="carousel-control-next-icon"></span>
-				  </a>
+				  	{% if films|length > 1 %}
+					  	<a class="carousel-control-prev" href="#carousel" data-slide="prev">
+					    <span class="carousel-control-prev-icon"></span>
+					 	</a>
+					  	<a class="carousel-control-next" href="#carousel" data-slide="next">
+					    <span class="carousel-control-next-icon"></span>
+					  	</a>
+				  	{% endif %}
 				  </div>
 			</div>
 			<h2> The films are ordered based on its release date.</h2>
