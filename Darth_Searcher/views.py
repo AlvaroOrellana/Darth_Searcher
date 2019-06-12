@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import swapi
 
 def index(request):
@@ -15,7 +15,7 @@ def index(request):
 def film_compare(request):
 	film_search = request.POST.get('film_search',False)
 	if not film_search:
-		return render(request, "404.html")
+		return redirect('Error')
 	else:
 		films, result = swapi.get_all("films").order_by("release_date"), []
 		for film in films:
@@ -28,3 +28,6 @@ def film_detail(request, ide):
 	for film in films.items:
 		if int(ide) == film.episode_id:
 			return render(request, "film.html", {'f': film})
+
+def error(request):
+	return render(request, "error.html")

@@ -13,9 +13,10 @@ body {
 	justify-content: space-around;
 }
 
-@media (min-width: 959px){
+
+@media (max-width: 959px){
 	.content, .detail {
-		width: 50%;
+		width: 100%;
 	}
 }
 
@@ -29,15 +30,22 @@ form {
 	display: flex;
 	flex-direction: column;
 }
+
+h1, h2, h3, h4 {
+	color: white;
+}
+
 .search_box {
-	border-radius: 5px; 
+	border-radius: 5px;
 }
 
-#button {
-	margin-top: 5%;
+.btn {
+	margin-top: 8%;
+	border-color: yellow;
+	border-radius: 5px;
 }
 
-.btn img{
+.btn img {
 	width: 50%;
 }
 
@@ -50,6 +58,8 @@ form {
 	height: 35%;
 }
 
-h1, h2, h3, h4 {
-	color: white;
+.btn_index {
+	border-color: yellow;
+	border-radius: 5px;
+	margin-top: 5%;
 }

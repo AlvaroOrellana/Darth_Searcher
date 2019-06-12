@@ -18,7 +18,7 @@
 	<body>
 		<div class="content">
 			<img src="{% static 'logo.png' %}"/>
-			<form class="form" method="POST" action="detail/">
+			<form class="form" method="POST" action="detail">
 			{% csrf_token %}
 			    <input class="search_box" type="text" name="film_search" placeholder="The Empire Strikes Back..." >
 			    <button class="btn" type="submit" ><img src="{% static 'search.png' %}"/></button>

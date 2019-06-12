@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from Darth_Searcher import views
 from django.views.generic import RedirectView
+import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'index/$', views.index, name="Index"),
-    url(r'detail/$', views.film_compare, name="FilmCompare"),
+    url(r'detail$', views.film_compare, name="FilmCompare"),
     url(r'^film/(?P<ide>\d+)/$', views.film_detail, name="Film"),
+    url(r'error$', views.error, name="Error"),
     url(r'^$',RedirectView.as_view(url='/index')),
 ]
