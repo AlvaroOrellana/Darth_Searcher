@@ -38,7 +38,7 @@
 				  </div>
 			</div>
 			<h4 align="center"> The films are ordered based on its release date.</h2>
-			<img class="btn" src="{% static 'index.png' %}" onClick="history.back()" />
+			<a href="{% url 'Index' %}"><img class="btn" src="{% static 'index.png' %}"/></a>
 		</div>
 		{%csrf_token%}
 		{% endblock %}
