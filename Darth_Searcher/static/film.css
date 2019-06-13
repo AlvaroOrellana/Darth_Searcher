@@ -1,4 +1,19 @@
-.detail_img {
-	width: 25%;
-	height: 50%;
+@media (max-width: 959px){
+	.detail_img {
+		width: 25%;
+		height: 50%;
+	}
 }
+
+@media (min-width: 960px){
+	.film_div {
+		width: 50%;
+		height: 50%;
+	}
+	.detail_img {
+		width: 25%;
+		height: 50%;
+	}
+}
+
+

@@ -2,25 +2,26 @@ body {
 	background-image: url('background.jpg');
 	background-repeat: no-repeat;
 	background-size: auto;
+}
+
+.content, .detail, .visited, .film_div, .error_div {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
 }
 
 .content, .detail {
-	margin-top: 5%;
-	display: flex;
-	flex-direction: column;
 	height: 75vh;
-	align-items: center;
-	justify-content: space-around;
+	margin-top: 5%;
 }
 
 .visited {
-	margin-top: 5%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
+	margin-top: 2%;
+	width: 75%;
+	border-width: 1px;
+	border-style: solid;
+	border-color: red;
 }
 
 @media (max-width: 959px){
@@ -41,21 +42,24 @@ form {
 }
 
 h1, h2, h3, h4 {
+	font-family: 'SFDistantGalaxy';
 	color: white;
 }
 
-.search_box {
+.search_box, .btn_index, .btn, .visited {
 	border-radius: 5px;
 }
+
+.film_div, .btn {
+		margin-top: 8%;
+	}
 
 .btn {
-	margin-top: 8%;
 	border-color: yellow;
-	border-radius: 5px;
 }
 
-.btn img {
-	width: 60%;
+.search_img {
+	width: 65%;
 }
 
 .carousel {
@@ -69,6 +73,24 @@ h1, h2, h3, h4 {
 
 .btn_index {
 	border-color: yellow;
-	border-radius: 5px;
 	margin-top: 5%;
+}
+
+#list_chars {
+	margin-top: 5%;
+	text-decoration: underline;
+	text-decoration-color: yellow;
+}
+
+#previously {
+	text-decoration: underline;
+	text-decoration-color: red;
+}
+
+@font-face {
+	font-family: "SFDistantGalaxy";
+	src: url("/static/fonts/SFDistantGalaxy.eot");
+	src: url("/static/fonts/SFDistantGalaxy.woff") format("woff"),
+		url("/static/fonts/SFDistantGalaxy.otf") format("opentype"),
+		url("/static/fonts/SFDistantGalaxy.svg#filename") format("svg");
 }

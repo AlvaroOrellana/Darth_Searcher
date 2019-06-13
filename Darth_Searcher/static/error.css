@@ -1,4 +1,17 @@
-.error_img {
-	width: 50%;
-	height: 75%;
+@media (max-width: 959px){
+	.error_img {
+		width: 50%;
+		height: 50%;
+	}
+}
+
+@media (min-width: 960px){
+	.error_img {
+		width: 50%;
+		height: 50%;
+	}
+	.error_div {
+		width: 50%;
+		height: 50%;
+	}
 }

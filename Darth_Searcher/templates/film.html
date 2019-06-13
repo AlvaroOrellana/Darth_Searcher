@@ -17,12 +17,14 @@
 	</head>
 
 	<body>
-		<div class="detail">
+		<div class="film_div">
 			<img class="detail_img" src="/static/{{f.episode_id}}.jpeg"/>
-			<h1>Title: {{ f.title }}</h1>
-			<h2>Director: {{ f.director }}</h2>
-			<h3>Producer/s: {{ f.producer }}</h3>
-			<h3>Release Date: {{ f.release_date }}</h3>
+			<div class="film_desc">
+				<h1>{{ f.title }}</h1>
+				<h2>Director: {{ f.director }}</h2>
+				<h3>Producer/s: {{ f.producer }}</h3>
+				<h3>Release Date: {{ f.release_date }}</h3>
+			</div>
 			<input class="btn" type="image" src="{% static 'previous.png' %}" onClick="history.back()">
 			<a href="{% url 'Index' %}"><img class="btn" src="{% static 'index.png' %}"/></a>
 		</div>
