@@ -1,11 +1,11 @@
-@media (max-width: 959px){
+@media (max-width: 767px){
 	.error_img {
 		width: 50%;
 		height: 50%;
 	}
 }
 
-@media (min-width: 960px){
+@media (min-width: 768px){
 	.error_img {
 		width: 50%;
 		height: 50%;

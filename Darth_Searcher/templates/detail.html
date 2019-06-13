@@ -37,10 +37,8 @@
 				  	{% endif %}
 				  </div>
 			</div>
-			{% if films|length > 1 %}
-				<h2> The films are ordered based on its release date.</h2>
-			{% endif %}
-			<a href="{% url 'Index' %}"><img class="btn" src="{% static 'index.png' %}"/></a>
+			<h4 align="center"> The films are ordered based on its release date.</h2>
+			<img class="btn" src="{% static 'index.png' %}" onClick="history.back()" />
 		</div>
 		{%csrf_token%}
 		{% endblock %}

@@ -24,19 +24,20 @@ body {
 	border-color: red;
 }
 
-@media (max-width: 959px){
+@media (max-width: 767px){
 	.content, .detail {
 		width: 100%;
 	}
 }
 
-@media (min-width: 960px){
+@media (min-width: 768px){
 	.content, .detail {
 		width: 50%;
 	}
 }
 
 form {
+	margin-top: 5%;
 	display: flex;
 	flex-direction: column;
 }
@@ -59,7 +60,7 @@ h1, h2, h3, h4 {
 }
 
 .search_img {
-	width: 65%;
+	width: 50%;
 }
 
 .carousel {

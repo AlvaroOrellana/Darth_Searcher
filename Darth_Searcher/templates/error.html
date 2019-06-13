@@ -24,7 +24,7 @@
 				<img class="error_msg" src="{% static 'error_msg_large.png' %}">
 			</picture>
 			<img class="error_img" src="{% static 'error.png' %}"/>
-			<a href="{% url 'Index' %}"><img class="btn" src="{% static 'index.png' %}"/></a>
+			<a href="{% url 'Index' %}"><img class="btn" src="{% static 'index.png' %}" onClick="history.back()" /></a>
 		</div>
 		{%csrf_token%}
 		{% endblock %}

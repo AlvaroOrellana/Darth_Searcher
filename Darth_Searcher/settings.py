@@ -28,9 +28,9 @@ SECRET_KEY = 'bqdj$q+%gb72cok64axppd@pzzfpspe^bptsmw!@=uhg2@3g2*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-SESSION_SAVE_EVERY_REQUEST=True
+SESSION_SAVE_EVERY_REQUEST = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition

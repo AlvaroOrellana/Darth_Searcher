@@ -1,11 +1,11 @@
-@media (max-width: 959px){
+@media (max-width: 767px){
 	.detail_img {
 		width: 25%;
 		height: 50%;
 	}
 }
 
-@media (min-width: 960px){
+@media (min-width: 768px){
 	.film_div {
 		width: 50%;
 		height: 50%;

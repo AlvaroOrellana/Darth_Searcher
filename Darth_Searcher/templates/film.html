@@ -26,7 +26,6 @@
 				<h3>Release Date: {{ f.release_date }}</h3>
 			</div>
 			<input class="btn" type="image" src="{% static 'previous.png' %}" onClick="history.back()">
-			<a href="{% url 'Index' %}"><img class="btn" src="{% static 'index.png' %}"/></a>
 		</div>
 		{%csrf_token%}
 		{% endblock %}
