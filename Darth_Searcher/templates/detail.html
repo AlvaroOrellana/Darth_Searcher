@@ -22,7 +22,7 @@
 				  <div class="carousel-inner" align="center">
 				  	{% for f in films %}
 				  		<div class="carousel-item {% if forloop.first %} active {% endif %}">
-					  		<a href="{% url 'Film' ide=f.episode_id%}"><img class="movie_pic" src="/static/{{f.episode_id}}.jpeg"/></a>
+					  		<a href="{% url 'Film' ide=f.episode_id %}"><img class="movie_pic" src="/static/{{f.episode_id}}.jpeg"/></a>
 					  		<h3>{{ f.title }}</h3>
 				  		</div>
 				  	{% endfor %}
@@ -36,7 +36,9 @@
 				  	{% endif %}
 				  </div>
 			</div>
-			<h2> The films are ordered based on its release date.</h2>
+			{% if films|length > 1 %}
+				<h2> The films are ordered based on its release date.</h2>
+			{% endif %}
 			<a href="{% url 'Index' %}"><img class="btn" src="{% static 'index.png' %}"/></a>
 		</div>
 		{%csrf_token%}

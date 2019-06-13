@@ -10,10 +10,16 @@ def index(request):
 	pjss = swapi.get_person(5)
 	pjs = [pjss]
 	pjs.append(swapi.get_person(1))
-	return render(request, "index.html", {'pjs': pjs})
+	try:
+		request.session['visited']
+	except:
+		request.session['visited'] = []
+
+	return render(request, "index.html", {'pjs': pjs, 'visited': request.session['visited']})
 
 def film_compare(request):
 	film_search = request.POST.get('film_search',False)
+	request.session['visited'] = []
 	if not film_search:
 		return redirect('Error')
 	else:
@@ -27,6 +33,11 @@ def film_detail(request, ide):
 	films = swapi.get_all("films")
 	for film in films.items:
 		if int(ide) == film.episode_id:
+			print request.build_absolute_uri()
+			if not request.build_absolute_uri() in request.session['visited']:
+				p = request.session['visited']
+				request.session['visited'].append(request.build_absolute_uri())
+				request.session['visited'] = p
 			return render(request, "film.html", {'f': film})
 
 def error(request):
