@@ -1,7 +1,7 @@
 # Darth_Searcher
 Aplicación Web basada en swapi (https://swapi.co)
 
-Instrucciones de instalación
+# Instrucciones de instalación
 
 Descargamos Git (en el caso de algunas distribuciones Linux, ya lo tendremos instalado):
 https://git-scm.com/
@@ -22,8 +22,11 @@ python manage.py runserver
 
 Abrimos en el navegador la dirección http://127.0.0.1:8000 y ya podremos usar la aplicación.
 
-NOTA: todas las consultas son realizadas a swapi.co, ésto quiere decir que para el buen funcionamiento de la aplicación es necesario que el dominio swapi.co se encuentre activo.
+# NOTAS
+Nota 1: todas las consultas son realizadas a swapi.co, ésto quiere decir que para el buen funcionamiento de la aplicación es necesario que el dominio swapi.co se encuentre activo.
 
-NOTA 2: durante la realización de esta aplicación tuve severos problemas dada la inestabilidad durante algunos días del dominio, de ahí estas notas.
+Nota 2: durante la realización de esta aplicación tuve severos problemas dada la inestabilidad durante algunos días del dominio, de ahí estas notas.
+
+Nota 3: es normal que en la carga de la página principal (Index) se demore 1-2 minutos ya que realiza una petición a la api solicitándole todos los personajes que tiene en su base de datos. No obstante, en el fichero views.py dejo comentado un par de líneas de código para evitar esto y hacer que sólo cargue un par de ellos con el objeto de realizar pruebas más rápidamente.
 
 Créditos para IMDB, swapi.co y autores de las imágenes utilizadas sin ánimo de lucro.
