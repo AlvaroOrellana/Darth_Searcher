@@ -27,6 +27,8 @@ Nota 1: todas las consultas son realizadas a swapi.co, ésto quiere decir que pa
 
 Nota 2: durante la realización de esta aplicación tuve severos problemas dada la inestabilidad durante algunos días del dominio, de ahí estas notas.
 
-Nota 3: es normal que en la carga de la página principal (Index) se demore 1-2 minutos ya que realiza una petición a la api solicitándole todos los personajes que tiene en su base de datos. No obstante, en el fichero views.py dejo comentado un par de líneas de código para evitar esto y hacer que sólo cargue un par de ellos con el objeto de realizar pruebas más rápidamente.
+Nota 3: es normal que la carga de la página principal (Index) se demore hasta 1 minuto ya que realiza una petición a la api solicitándole un total de 10 personajes que tiene en su base de datos. No obstante, en el fichero views.py dejo comentado un par de líneas de código para hacer que solicite todos los personajes de su base de datos, produciendo una demora en la carga del índice de unos 3-4 minutos.
 
 Créditos para IMDB, swapi.co y autores de las imágenes utilizadas sin ánimo de lucro.
+
+Gracias por todo, George.
